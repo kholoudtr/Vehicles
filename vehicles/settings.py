@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cars.apps.CarsConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -126,8 +127,11 @@ STATIC_URL = 'static/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
 
-
+# LOGOUT_REDIRECT_URL = '/'  # اجعلها مختلفة عن LOGIN_REDIRECT_URL
+LOGIN_REDIRECT_URL='index'
+LOGIN_URL='login'
+SESSION_COOKIE_AGE = 1209600  # أسبوعين تأكد من أن الجلسة لا تنتهي فورًا
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD  = 'django.db.models.BigAutoField'
